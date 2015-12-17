@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="jp.joao.android.sharedprefseditor"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:name=".DebugApplication">
+        <receiver
+            android:name=".tools.SharedPrefsEditorReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="${applicationId}.sp.PUT"/>
+                <action android:name="${applicationId}.sp.REMOVE"/>
+                <action android:name="${applicationId}.sp.CLEAR"/>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
