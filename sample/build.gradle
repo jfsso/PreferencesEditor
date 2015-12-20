@@ -2,14 +2,14 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    buildToolsVersion '23.0.2'
 
     defaultConfig {
         applicationId "jp.joao.preferenceseditor.sample"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.compileSdkVersion
         versionCode 1
-        versionName "1.0"
+        versionName "$version"
     }
 
     compileOptions {

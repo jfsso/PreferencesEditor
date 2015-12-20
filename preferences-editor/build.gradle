@@ -1,11 +1,15 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    buildToolsVersion '23.0.2'
 
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
+        versionCode 1
+        versionName "$version"
     }
 
     compileOptions {
@@ -20,4 +24,53 @@ android {
 
 dependencies {
     compile 'com.jakewharton:process-phoenix:1.0.2'
+}
+
+install {
+    repositories.mavenInstaller {
+        pom.project {
+            name 'Preferences Editor'
+            description 'Preferences Editor makes it easy to add, edit, remove keys from shared preferences files.'
+            url 'https://github.com/jfsso/PreferencesEditor'
+            inceptionYear '2015'
+
+            packaging 'aar'
+            groupId 'jp.joao'
+            artifactId 'preferences-editor'
+
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    distribution 'repo'
+                }
+            }
+            scm {
+                connection 'https://github.com/jfsso/PreferencesEditor.git'
+                url 'https://github.com/jfsso/PreferencesEditor'
+
+            }
+            developers {
+                developer {
+                    id 'jfsso'
+                    name 'João Orui'
+                }
+            }
+        }
+    }
+}
+
+bintray {
+    user = project.hasProperty('bintrayUser') ? project.property('bintrayUser') : System.getenv('BINTRAY_USER')
+    key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
+    configurations = ['archives']
+    pkg {
+        repo = 'maven'
+        name = 'preferences-editor'
+        userOrg = user
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/jfsso/PreferencesEditor.git'
+        issueTrackerUrl = 'https://github.com/jfsso/PreferencesEditor/issues'
+        labels = ['android']
+    }
 }
