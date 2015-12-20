@@ -1,1 +1,1 @@
-include ':app'
+include ':preferences-editor', ':sample'

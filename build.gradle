@@ -1,14 +1,9 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 buildscript {
     repositories {
         jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.0.0-alpha2'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
     }
 }
 
@@ -16,6 +11,14 @@ allprojects {
     repositories {
         jcenter()
     }
+}
+
+ext {
+    minSdkVersion = 4
+    compileSdkVersion = 23
+    buildToolsVersion = '23.0.2'
+
+    ci = 'true'.equals(System.getenv('CI'))
 }
 
 task clean(type: Delete) {

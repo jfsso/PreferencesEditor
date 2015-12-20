@@ -1,0 +1,16 @@
+<manifest package="jp.joao.preferenceseditor"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <receiver
+            android:name=".PreferencesEditorReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="${applicationId}.sp.PUT"/>
+                <action android:name="${applicationId}.sp.REMOVE"/>
+                <action android:name="${applicationId}.sp.CLEAR"/>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
