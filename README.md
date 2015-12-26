@@ -40,8 +40,21 @@ adb shell 'am broadcast -a org.example.app.sp.CLEAR --ez restart true'
 Install
 -------
 
+1\. Add the JitPack repository to your build file
+
 ```groovy
-compileDebug 'jp.joao:preferences-editor:1.0.0'
+allprojects {
+	repositories {
+		...
+		maven { url "https://jitpack.io" }
+	}
+}
+```
+
+2\. Add the dependency (recommended to add only to debug build type)
+
+```groovy
+compileDebug 'com.github.jfsso:PreferencesEditor:1.0.0'
 ```
 
 
