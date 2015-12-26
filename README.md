@@ -54,7 +54,7 @@ allprojects {
 2\. Add the dependency (recommended to add only to debug build type)
 
 ```groovy
-compileDebug 'com.github.jfsso:PreferencesEditor:1.0.0'
+debugCompile 'com.github.jfsso:PreferencesEditor:1.0.0'
 ```
 
 
