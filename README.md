@@ -1,6 +1,8 @@
 Preferences Editor
 ==================
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-PreferencesEditor-green.svg?style=true)](https://android-arsenal.com/details/1/2967)
+
 Preferences Editor makes it easy to add, edit, remove keys from shared preferences files.
 
 It defines a BroadcastReceiver that will make changes to your shared preferences based on received actions and data.
